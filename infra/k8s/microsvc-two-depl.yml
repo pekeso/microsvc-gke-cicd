@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microsvc-two-depl
+spec:
+  selector:
+    matchLabels:
+      app: microsvc-two
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: microsvc-two
+    spec:
+      containers:
+        - name: microsvc-two
+          image: joembiye/microsvc-two
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microsvc-two-svc
+spec:
+  selector:
+    app: nats
+  ports:
+    - protocol: TCP
+      port: 3002

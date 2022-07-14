@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microsvc-one-depl
+spec:
+  selector:
+    matchLabels:
+      app: microsvc-one
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: microsvc-one
+    spec:
+      containers:
+        - name: microsvc-one
+          image: joembiye/microsvc-one
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microsvc-one-svc
+spec:
+  selector:
+    app: microsvc-one
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: NodePort
