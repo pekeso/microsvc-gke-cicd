@@ -56,7 +56,7 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push "gcr.io/$PROJECT_ID/$IMAGE:$${{ steps.vars.outputs.docker_tag }}"
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:${{ steps.vars.outputs.docker_tag }}"
 
     
 
