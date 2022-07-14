@@ -8,9 +8,9 @@ on:
 env:
   PROJECT_ID: helpful-range-352009
   GKE_CLUSTER: my-cluster
-  GKE_ZONE: us-central1-c
-  DEPLOYMENT_NAME: gke-test
-  IMAGE: microsvc
+  GKE_ZONE: us-central1
+  DEPLOYMENT_NAME: microsvc-one-depl
+  IMAGE: microsvc-one
 
 jobs:
   setup-build-publish-deploy:
