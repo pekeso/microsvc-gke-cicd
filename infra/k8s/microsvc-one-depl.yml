@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: microsvc-one
-          image: joembiye/microsvc-one
+          # image: gcr.io/helpful-range-352009/microsvc-one
 ---
 apiVersion: v1
 kind: Service
