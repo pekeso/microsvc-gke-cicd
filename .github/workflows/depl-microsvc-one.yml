@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: helpful-range-352009
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: my-cluster
   GKE_ZONE: us-central1
   DEPLOYMENT_NAME: microsvc-one-depl
@@ -26,7 +26,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@v0
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: helpful-range-352009
+        project_id: ${{ secrets.GKE_PROJECT }}
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication

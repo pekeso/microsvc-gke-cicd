@@ -14,7 +14,10 @@ spec:
     spec:
       containers:
         - name: microsvc-one
-          # image: gcr.io/helpful-range-352009/microsvc-one
+          image: gcr.io/${{ secrets.GKE_PROJECT }}/$IMAGE_NAME
+          env:
+          - name: IMAGE_NAME
+            value: "microsvc-one"
 ---
 apiVersion: v1
 kind: Service
