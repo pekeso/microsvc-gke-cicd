@@ -3,9 +3,9 @@ import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservice
 
 @Injectable()
 export class MathService {
-  // getHello(): string {
-  //   return 'Hello World!';
-  // }
+  getHello(): string {
+    return 'Hello World!';
+  }
   private client: ClientProxy;
 
   constructor() {

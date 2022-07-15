@@ -6,10 +6,10 @@ export class AppController {
   constructor(private readonly appService: MathService) {}
   private logger = new Logger('AppController');
   
-  // @Get()
-  // getHello(): string {
-  //   return this.appService.getHello();
-  // }
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
 
   @Post('add')
   async accumulate(@Body('data') data: number[]) {
