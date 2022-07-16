@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: bonairdc.com
+    - host: www.bonairdc.com
       http:
         paths:
           - path: /
