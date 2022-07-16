@@ -9,10 +9,17 @@ spec:
     - host: bonairdc.com
       http:
         paths:
+          - path: /
+            pathType: Prefix
+            backend: 
+              service:
+                name: microsvc-one-cluster-srv
+                port: 
+                  number: 3000
           - path: /add
             pathType: Prefix
             backend: 
               service:
-                name: node-cluster-srv
+                name: microsvc-one-cluster-srv
                 port: 
                   number: 3000

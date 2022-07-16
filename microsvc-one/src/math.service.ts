@@ -3,9 +3,6 @@ import { ClientProxy, ClientProxyFactory, Transport } from '@nestjs/microservice
 
 @Injectable()
 export class MathService {
-  getHello(): string {
-    return 'Hello World!';
-  }
   private client: ClientProxy;
 
   constructor() {
@@ -15,6 +12,10 @@ export class MathService {
         servers: ['nats://nats:4222']
       },
     });
+  }
+
+  getHello(): string {
+    return 'Hello World!';
   }
   
   public accumulate(data: number[]) {

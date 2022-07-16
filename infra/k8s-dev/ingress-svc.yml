@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-svc
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: test.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: 
+              service:
+                name: microsvc-one-cluster-srv
+                port: 
+                  number: 3000
+          - path: /add
+            pathType: Prefix
+            backend: 
+              service:
+                name: microsvc-one-cluster-srv
+                port: 
+                  number: 3000
